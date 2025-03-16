@@ -3,6 +3,9 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
+import { db } from "@/lib/db";
+import { DataTable } from "@/components/custom/DataTable";
+import { columns } from "@/components/courses/Columns";
 
 const CoursesPage = async () => {
   const { userId } = auth();
@@ -11,7 +14,14 @@ const CoursesPage = async () => {
     return redirect("/sign-in");
   }
 
-  
+  const courses = await db.course.findMany({
+    where: {
+      instructorId: userId,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
 
   return (
     <div className="px-6 py-4">
@@ -20,6 +30,7 @@ const CoursesPage = async () => {
       </Link>
 
       <div className="mt-5">
+        <DataTable columns={columns} data={courses} />
       </div>
     </div>
   );
