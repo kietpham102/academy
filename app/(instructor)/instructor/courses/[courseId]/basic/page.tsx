@@ -35,6 +35,7 @@ const CourseBasics = async ({ params }: { params: { courseId: string } }) => {
   });
 
   const levels = await db.level.findMany();
+  console.log(' levels:', levels);
 
   const requiredFields = [
     course.title,

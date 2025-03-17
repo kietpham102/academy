@@ -17,14 +17,14 @@ import {
 import { Input } from "@/components/ui/input";
 import RichEditor from "@/components/custom/RichEditor";
 import { ComboBox } from "../custom/ComboBox";
+import FileUpload from "../custom/FileUpload";
 import Link from "next/link";
 import axios from "axios";
 import { usePathname, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { Loader2, Trash } from "lucide-react";
-import PublishButton from "../custom/PublishButton";
-import FileUpload from "../custom/FileUpload";
 import Delete from "../custom/Delete";
+import PublishButton from "../custom/PublishButton";
 
 const formSchema = z.object({
   title: z.string().min(2, {
@@ -68,13 +68,13 @@ const EditCourseForm = ({
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: course.title,
-      subtitle: course.subtitle || "",
-      description: course.description || "",
+      subtitle: course.subtitle || "For all Levels",
+      description: course.description || " Let start learning",
       categoryId: course.categoryId,
       subCategoryId: course.subCategoryId,
       levelId: course.levelId || "",
       imageUrl: course.imageUrl || "",
-      price: course.price || undefined,
+      price: course.price || 39.99,
     },
   });
 
