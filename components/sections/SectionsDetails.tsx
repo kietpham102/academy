@@ -18,6 +18,7 @@ import ReadText from "@/components/custom/ReadText";
 import MuxPlayer from "@mux/mux-player-react";
 import Link from "next/link";
 import ProgressButton from "./ProgressButton";
+import SectionMenu from "../layout/SectionMenu";
 
 interface SectionsDetailsProps {
   course: Course & { sections: Section[] };
@@ -58,6 +59,7 @@ const SectionsDetails = ({
         <h1 className="text-2xl font-bold max-md:mb-4">{section.title}</h1>
 
         <div className="flex gap-4">
+          <SectionMenu course={course} />
           {!purchase ? (
             <Button onClick={buyCourse}>
               {isLoading ? (

@@ -68,13 +68,13 @@ const EditCourseForm = ({
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: course.title,
-      subtitle: course.subtitle || "For all Levels",
-      description: course.description || " Let start learning",
+      subtitle: course.subtitle || "",
+      description: course.description || "",
       categoryId: course.categoryId,
       subCategoryId: course.subCategoryId,
       levelId: course.levelId || "",
       imageUrl: course.imageUrl || "",
-      price: course.price || 39.99,
+      price: course.price || undefined,
     },
   });
 

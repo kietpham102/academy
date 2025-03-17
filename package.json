@@ -36,6 +36,8 @@
     "react-hot-toast": "^2.5.2",
     "react-quill": "^2.0.0",
     "react-table": "^7.8.0",
+    "recharts": "^2.15.1",
+    "stripe": "^17.7.0",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^7.5.2",
