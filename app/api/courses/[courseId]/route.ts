@@ -16,7 +16,7 @@ export const PATCH = async (
     const { userId } = auth();
     const { courseId } = params;
     const values = await req.json();
-    console.log(' values111111111111:', values);
+    console.log('values 111', values);
 
     if (!userId) {
       return new Response("Unauthorized", { status: 401 });
